@@ -40,7 +40,6 @@ const Women =()=>{
                     marginBottom: "2rem",
                     fontFamily: "'Montserrat', sans-serif",
                     marginTop: "4rem",
-                    color: "#0a0709",
                 }}
             >
                 Women Products
