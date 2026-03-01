@@ -1,0 +1,15 @@
+body {
+  padding-top: 70px; /* height of navbar */
+}
+.bg-pink {
+  background-color: #ff69b4 !important; /* hot pink */
+}
+
+input{
+  width: 0;
+  transition: 0.3s;
+}
+
+.input-group-text i {
+  color: #064378; 
+}
