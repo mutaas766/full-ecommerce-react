@@ -21,14 +21,16 @@ const InfoCards = () => {
       title: "24/7 Support",
       desc: "We’re here to help anytime",
     },
+
+
   ];
 
   return (
-    <div className="container my-5">
-      <div className="row g-4 text-center">
+    <div className="container my-5"> 
+      <div className="row g-4 text-center ">
         {cards.map((card) => (
-          <div key={card.id} className="col-12 col-md-4">
-            <div className="card h-100 border-0 shadow-sm py-4">
+          <div key={card.id} className="col-12 col-md-4 ">
+            <div className="card h-100 border-0 shadow-sm py-4 bg-dark text-white p-4 rounded py-5 px-3 radius-15 ">
               <div className="card-body d-flex flex-column align-items-center">
                 {card.icon}
                 <h5 className="card-title mt-2">{card.title}</h5>

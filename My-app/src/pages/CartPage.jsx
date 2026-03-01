@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 
 const CartPage = ({ closeCart }) => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems,removeFromCart  } = useContext(CartContext);
   const [paymentMethod, setPaymentMethod] = useState("");
   const [currency, setCurrency] = useState("");
 
@@ -26,11 +26,23 @@ const CartPage = ({ closeCart }) => {
         <p>Your cart is empty</p>
       ) : (
         <ul className="list-group mb-3">
-          {cartItems.map((item, idx) => (
-            <li key={idx} className="list-group-item d-flex justify-content-between">
-              {item.name} - ${item.price.toFixed(2)}
-            </li>
-          ))}
+         {cartItems.map((item, idx) => (
+  <li
+    key={idx}
+    className="list-group-item d-flex justify-content-between align-items-center"
+  >
+    <span>
+      {item.name} - ${item.price.toFixed(2)}
+    </span>
+
+    <button
+      className="btn btn-sm btn-outline-danger"
+      onClick={() => removeFromCart(idx)}
+    >
+      Remove
+    </button>
+  </li>
+))}
         </ul>
       )}
 

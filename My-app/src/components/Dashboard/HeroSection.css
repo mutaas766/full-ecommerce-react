@@ -1,10 +1,13 @@
-
+/* Hero Section */
 .hero-section {
   height: 80vh;
   background: url('https://source.unsplash.com/1600x900/?shopping') no-repeat center center/cover;
   position: relative;
+  overflow: hidden; /* ensures nothing spills out */
+  margin-top: 5%;
 }
 
+/* Dark overlay to make text and icons visible */
 .hero-section::before {
   content: '';
   position: absolute;
@@ -15,17 +18,68 @@
   z-index: 1;
 }
 
+/* Container for text content */
 .hero-section .container {
   position: relative;
-  z-index: 2;
-  color: black;
-}
-.hero-image {
-width: 300%;
-height: 100%;
-object-fit: cover;
+  z-index: 2; /* ensures it’s above the overlay */
+  color: white; /* readable text */
+  text-align: center;
 }
 
+/* Floating icons centered in the section */
+.floating-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 2;
+
+}
+
+/* Individual icons */
+.floating-icons .icon {
+  font-size: 2.5rem;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+  cursor: pointer;
+  margin-top: 100%;
+}
+
+/* Icon hover effect */
+.floating-icons .icon:hover {
+  transform: scale(1.2);
+  color: #ff4081; /* or any accent color you like */
+}
+
+/* Floating animation for icons */
+@keyframes float {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-15px); }
+  100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+/* Apply individual delays so icons move asynchronously */
+.floating-icons .icon1 { animation: float 4s ease-in-out infinite; }
+.floating-icons .icon2 { animation: float 5s ease-in-out infinite; }
+.floating-icons .icon3 { animation: float 3.5s ease-in-out infinite; }
+.floating-icons .icon4 { animation: float 4.5s ease-in-out infinite; }
+.floating-icons .icon5 { animation: float 6s ease-in-out infinite; }
+
+
+.floating-icons .icon {
+  transform-origin: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.floating-icons .icon:hover {
+  transform: scale(1.3) rotate(15deg);
+  color: #ff4081;
+}
+
+
+/* Optional: Card hover effect for other elements */
 .card:hover {
   transform: scale(1.03);
   transition: transform 0.3s;
