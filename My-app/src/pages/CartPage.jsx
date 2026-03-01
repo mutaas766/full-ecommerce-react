@@ -58,7 +58,7 @@ const CartPage = ({ closeCart }) => {
         <div className="mt-3">
           <h6>Payment: {paymentMethod} - {currency}</h6>
           <p>
-            Total: {currency === "Shilling" ? (total * 575).toLocaleString() + " SOS" : "$" + total.toFixed(2)}
+            Total: {currency === "Shilling" ? (total * 11000).toLocaleString() + " Sh" : "$" + total.toFixed(2)}
           </p>
           <button className="btn btn-danger" onClick={() => { alert("Payment Completed!"); closeCart(); }}>
             Confirm Payment
